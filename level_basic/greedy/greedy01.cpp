@@ -1,6 +1,8 @@
 /*
 贪心算法--区间问题
 区间选点 Acwing905
+最大不相交区间数量 Acwing908
+两道题思路相同，代码也相同
 */
 #include <iostream>
 #include <cstring>
