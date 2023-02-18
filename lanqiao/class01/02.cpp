@@ -4,7 +4,7 @@ from: acwing94 递归实现排列型枚举
 Tag: 递归
 Code:
 字典序最小：从小到大枚举即可。
-时间复杂度：
+时间复杂度：n!*n
 */
 #include <iostream>
 #include <cstring>
