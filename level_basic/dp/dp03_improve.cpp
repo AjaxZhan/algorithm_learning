@@ -1,6 +1,7 @@
 /*
 多重背包问题
 经典优化，二进制优化，s--》logs
+思路：将一个物品只能用s次，拆分成logs的物品只能用1次，即01背包问题，
 证明过程看笔记，感觉还用到了高考时候的数列知识 
 */
 #include <iostream>
@@ -9,7 +10,7 @@
 #include <algorithm>
 using namespace std;
 
-//1000 * log2000 = 24000左右
+//“新物品”个数：1000 * log2000 = 24000左右
 const int N = 25000; // 这个数据范围，按照暴力解法就要挂掉了
 const int M = 2010; //体积
 
@@ -25,7 +26,6 @@ int main(){
 
         int a,b,s;
         cin >> a>> b >> s; //体积、价值、个数
-        cnt++;
 
         int k = 1; // 把k个第i个物品打包
         while(k<=s){
@@ -41,7 +41,7 @@ int main(){
             w[cnt] = b*s;
         }
     }
-    n = cnt; // 将n更新成cnt，表示重新组合成的n
+    n = cnt; // 将n更新成cnt，表示重新组合成的新物品的n
 
     //对cnt个背包，每个只能选1次，可以组合成原来想要的s
     for(int i=1;i<=n;i++)
