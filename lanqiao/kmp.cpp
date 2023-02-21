@@ -21,7 +21,7 @@ int main(){
     //求next数组
     for(int i=2,j=0;i<=n;i++){ // 从2开始，ne[1]必定为0
         while(j && p[i]!=p[j+1]) j = ne[j]; // 如果匹配不成功，则退到nej的位置
-        if(p[i] == p[j+1]) j++; //匹配成功
+        if(p[i] == p[j+1]) j++; //匹配成功，往前继续走
         ne[i] = j; // 记录ne
     }
 
@@ -33,7 +33,7 @@ int main(){
         if(j == n){
             //匹配成功
             printf("%d",i-n+1 - 1); //下标从0开始
-            j = ne[j]; // 匹配成功后，
+            j = ne[j]; // 匹配成功后，记得回到ne[j]
         }
     }
     return 0;
