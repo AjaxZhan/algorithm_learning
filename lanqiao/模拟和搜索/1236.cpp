@@ -20,7 +20,7 @@ int main(){
     long long res = 0;
     sort(a,a+n);
     sort(c,c+n);
-    // sort(b,b+n);
+    sort(b,b+n); 
     //枚举b
     for(int i=0;i<n;i++){
         int bb = b[i];
@@ -32,10 +32,10 @@ int main(){
             if(a[mid] < bb) l = mid;
             else r = mid-1;
         }
-        //答案格式：(left+1)(N-right+1)
+        //答案格式：(left+1)(N-right)
         //特判一下如果找不到
-        if(a[l] >=bb) left = -1;
-        left = l+1;
+        if(a[l] >=bb) l = -1;
+        left = l;
         //二分有多少个数大于bj
         l = 0 ,r = n-1;
         while(l < r){
@@ -43,9 +43,9 @@ int main(){
             if(c[mid] > bb) r= mid;
             else l = mid+1;
         }
-        if(a[r]<=bb) right = n+1;
-        right = r+1;
-        res+=(left+1)*(n-right+1);
+        if(c[l]<=bb) r = n;
+        right = r;
+        res+=(long long)(left+1)*(n-right);
     }
     cout << res<< endl;
     return 0;
