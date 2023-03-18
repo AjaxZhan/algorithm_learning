@@ -1,6 +1,6 @@
 /*
 title: 装箱问题
-from: acwing1024
+from: acwing 1024
 Tag: 01BAG
 Code:
 */
@@ -10,18 +10,19 @@ Code:
 #include <algorithm>
 using namespace std;
 const int N = 20010;
-int v[N];
+int n;
+int V;
 int f[N];
-int gv,n;
 int main(){
-    cin >> gv;
+    cin >> V;
     cin >> n;
-    for(int i=1;i<=n;i++) scanf("%d",&v[i]);
-    for(int i=1;i<=n;i++){
-        for(int j=gv;j>=v[i];j--){
-            f[j] = max(f[j],f[j-v[i]] + v[i]); 
+    for(int i=0;i<n;i++){
+        int v;
+        cin >> v;
+        for(int j = V;j>=v;j--){
+            f[j] = max(f[j],f[j-v] + v);
         }
     }
-    cout <<gv - f[gv] << endl;
+    cout << V - f[V] << endl;
     return 0;
 }
