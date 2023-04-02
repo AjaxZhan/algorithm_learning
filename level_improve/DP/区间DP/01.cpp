@@ -1,7 +1,7 @@
 /*
-title:
-from:
-Tag:
+title: 石子合并
+from: 
+Tag: 区间DP
 Code:
 */
 #include <iostream>
