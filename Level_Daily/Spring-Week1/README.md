@@ -2,6 +2,8 @@
 
 ## 题目
 
+[题目传送](https://www.acwing.com/problem/content/description/3387/)
+
 给定一个后序遍历的字符串，输出中序遍历。
 
 ## 分析
