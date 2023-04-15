@@ -1,2 +1,3 @@
-# algorithm_learning
-My algorithm code for C++. 
+# Algotirhm Learning
+
+This repository records my exercises about algorithm.
