@@ -35,7 +35,7 @@ void levelOrderTraversal(TreeNode *root,vector<int>res){
 }
 
 // LeetCode102 将二叉树层序遍历输出为二维数组
-void levelOrderTraversal2(TreeNode *root,vector<vector<int>>res){
+void levelOrderTraversal2(TreeNode *root,vector<vector<int>>&res){
     if(root == nullptr) return ;
     queue<TreeNode*> q;
     q.push(root);
