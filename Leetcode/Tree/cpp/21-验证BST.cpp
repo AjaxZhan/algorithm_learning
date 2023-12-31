@@ -41,6 +41,30 @@ bool dfs2(TreeNode* root, long long& maxV){
     return left && right;
 }
 
+// 第三种写法，非递归中序遍历
+// 记得非递归中序遍历是需要有一个指针先一直往后走的
+// 顺序中序遍历
+bool isBST(TreeNode* root){
+    stack<TreeNode*> stk;
+    TreeNode* p = root;
+    TreeNode* pre = nullptr;
+    while(p!= nullptr || !stk.empty()){
+        if(p!=nullptr){
+            stk.push(p);
+            p = p->left;
+        }else{
+            p = stk.top();
+            stk.pop();
+            // 访问
+            if(pre!=nullptr && p->val <= pre->val) return false;
+            pre = p;
+            p = p->right;
+        }
+    }
+
+    return true;
+}
+
 int main(){
     
     return 0;
